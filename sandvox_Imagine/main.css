@@ -1,0 +1,559 @@
+/* 
+   css Copyright (c) 2006-2009 Karelia Software. All Rights Reserved.
+   css released under Creative Commons License 
+        - http://creativecommons.org/licenses/by-sa/2.5/ 
+   All associated graphics belong to their respective owners 
+        and are licensed separately. 
+*/
+
+
+
+/* 
+CUSTOMISATION
+=============
+
+This section is provided to give you a simple way of altering the Imagine design and adapting it to your own needs and taste.
+
+Elements of the design that can be easily adapted are:
+
+* header image
+* colours
+* title positioning
+
+Details on each of those customisations along with examples are given below.
+*/
+
+/* 
+COLOURS
+=======
+By default the design uses five different colours.
+You can change each one of them using the statements that follow. These statements are grouped _per colour_. 
+
+To change an existing colour you need to replace each occurrence of the colour's name (e.g. #1f1f2f) by a different colour.
+
+For best results, make sure that you replace all occurrences of the same colour by the same new colour. Also keep in mind that you will want to preserve the contrast between colours. If the original text is dark blue on white, replacing dark blue by yellow will make things hard to read. Thus you'll also want to replace white by some dark colour to keep things readable.
+
+Replacing the dark grey (#ccc) colour may be a bit difficult as it ties in with a background graphic of the same colour to improve the looks.
+
+An example of replacement colours could be:
+#eee    -> #001    (light grey to almost black)
+#fff    -> #000    (white to black)
+#1f1f2f -> #ca821c (dark blue to orange)
+#ccc    -> #ccc    (dark grey remains unchanged)
+#000    -> #eee    (black to light grey)
+
+You are advised to not change the order of these statements to ensure good results in IE6.
+*/
+
+/* #eee (light grey) for most backgrounds and text on #1f1f2f */
+#page-container, #sitemenu li:hover, #sitemenu li:hover a, #sitemenu li a:hover, #sitemenu li.currentPage, .callout .pagelet a:hover {
+	background-color: #eee !important;
+}
+
+/* #fff (white) for text on dark backgrounds */
+.photogrid-index a, .gridItem, .gridItem h3  {
+	background-color: #eee !important;
+}
+
+a:hover, #sitemenu, #sitemenu a, .callout .pagelet, .callout .pagelet a, h1 a:link, h1 a:visited { 
+	color: #eee !important;
+}
+
+/* #1f1f2f (dark blue) for the text, menu background, some pagelet backgrounds */
+body, #sitemenu, .callout .pagelet {
+	background-color: #1f1f2f !important;
+}
+
+body, a:link, a:visited, a:hover, #sitemenu li:hover, #sitemenu li:hover a, #sitemenu li a:hover, #sitemenu li.currentPage, #sitemenu li.currentParent, #sitemenu li.currentParent a, #sidebar, .callout .pagelet a:hover, .callout .pagelet.bordered, .callout .pagelet.bordered a, .photogrid-index a, .gridItem h3   { 
+	color: #1f1f2f !important;
+}
+
+.callout .pagelet.bordered {
+	border-color: #1f1f2f !important;
+}
+
+
+/* #ccc (dark grey) for the sidebar */
+#sidebar, .callout .pagelet.bordered {
+	background-color: #ccc !important;
+}
+
+/* #000 (black) for the double lines at the left and right of the page */
+#page-container, #title {
+	border-color: #000 !important;
+}
+
+
+
+
+/*
+TITLE 
+
+It may also be desirable to position the title's text differently or have it in a different colour, so it fits in better with your title background graphics.
+
+To use any of these options, copy the provided style statements out of this comment (e.g. before the slash-ampsersand line coming before the line 'TITLE'.
+
+Change colour: replace the #fff by the colour you want in what follows
+
+#title, h1 a:link, h1 a:visited {
+	color: #fff !important;
+}
+
+Change positioning: Here are a few suggestions for changing the positioning. Feel free to combine them or fiddle with them as you see fit.
+
+Move title and subtitle to the _top_:
+
+h1 {
+	top: 18px !important;
+}
+
+#title p {
+	top: 4px !important;
+}
+
+
+Move title and subtitle to the right (and the header graphic to the right):
+
+h1, #title p  {
+	left: 180px !important;
+	right: 18px !important;
+	text-align: right !important;
+}
+
+#logo-container {
+	float: none !important;
+	position: absolute !important;
+	left: 0px !important;
+}
+
+Or use both of these blocks to have the title at the top right.
+*/
+
+
+
+
+
+/* 
+Now the extracts of the style for your editing convenience end and the actual work gets done...
+
+ACTUAL STYLE SHEET
+==================
+*/
+
+/*
+GLOBAL
+
+Try to define style properties as globally as possible. E.g. the basic font setting should be right there for the body element
+*/
+
+* { 
+	margin:0px;
+	padding:0px;
+}
+
+body {
+	font-family: "Lucida Grande", Trebuchet, sans-serif;
+	font-size: 76%; /* as recommended in CSS guide */
+	background:#1f1f2f url(background.png);
+	color:#1f1f2f;
+	word-wrap:break-word;
+	line-height:1.6;
+}
+
+img {
+	border:0px #000 none;
+}
+
+a:link, a:visited {
+	color:#1f1f2f;
+}
+
+a:hover {
+	color:#fff !important;
+	background: #1f1f2f;
+	background: rgba(31,31,47,0.5);
+}
+
+.article, .no-callouts {
+	clear: left;
+}
+
+.article p, .pagelet p {
+	margin-bottom: 0.8em;
+}
+
+.article-info {
+	clear:left;
+}
+
+h5, h6 {
+	font-size: 100%;
+}
+
+
+/* head */
+
+#page-container {
+	background: #eee;
+	margin:auto;
+	width:762px;
+	border-left:#000 3px double;
+	border-right:#000 3px double;
+}
+
+
+#page-top {
+	padding-top:200px;
+	width:762px;
+	overflow:visible;
+}
+
+
+#title {
+	height:200px;
+	width:762px;
+	position:absolute;
+	top:0px;
+	color:#fff;
+	border-style: double;
+	border-color: #000;
+	border-width: 0px 3px;
+	margin-left:-3px;
+	background:	transparent url(DefaultHeader.jpeg) no-repeat top center;
+}
+
+#logo-container {
+	float:right;
+	margin:20px 24px 34px 26px;
+	padding:3px;
+}
+
+#page-top h1 {
+	position:absolute;
+	bottom:36px;	
+	left:18px;
+	right:180px;
+	font-size:240%;
+	line-height:133%;
+	text-shadow: #000 2px 2px 3px;
+}
+
+#page-top h1 a:link, #page-top h1 a:visited {
+	color: #fff;
+	text-decoration:none;
+}
+
+#title:hover a, #title a:hover {
+	text-decoration:underline;
+}
+
+#title p {
+	position:absolute;
+	bottom:8px;
+	left:20px;
+	height:1.5em;
+	overflow:hidden;
+	text-shadow: #555 2px 2px 1px;
+}
+
+
+
+/* sitemenu */
+#sitemenu {
+	color:#fff;
+	background:#1f1f2f;
+	padding-right: 7px;
+}
+
+#sitemenu a {
+	color:#fff;
+	text-decoration:none;
+}
+
+#sitemenu ul {
+	list-style-type:none;
+	padding:0px;
+}
+
+#sitemenu li {	
+	display:inline;
+	margin:0px;
+	padding-top:2px;
+	padding-bottom:2px;
+}
+
+#sitemenu li a, #sitemenu li.currentPage  {
+	padding-left: 0.6em;
+	padding-right: 0.6em;
+}
+
+/* Hides from IE5-mac \*/
+* html #sitemenu li a, * html #sitemenu li.currentPage  {
+	padding:2px 0.6em;
+}
+/* End hide from IE5-mac */
+
+#sitemenu li:hover, #sitemenu li:hover a, #sitemenu li a:hover, #sitemenu li.currentPage, #sitemenu li.currentParent, #sitemenu li.currentParent a {
+	background:#eee;
+	color:#1f1f2f;
+}
+
+#sitemenu li.currentPage span.in, #sitemenu li.currentParent a span.in {
+	text-decoration:underline;
+}
+
+#sitemenu li.currentParent a:hover span.in {
+	text-decoration: none;
+}
+
+
+/* headings */
+
+h3 {
+	margin-top:1em;
+}
+
+
+
+/* sidebar / callout / pagelets */
+
+#main, #page-bottom {
+	padding:12px;
+}
+
+body.allow-sidebar #page-content, body.allow-sidebar #page-bottom {
+	background:url(sidebarbackground.gif) center repeat-y;
+}
+
+body.allow-sidebar #main {
+	margin-right:245px;
+}
+
+body.allow-sidebar #page-bottom {
+	padding-right:245px;
+}
+
+#sidebar {
+	float:right;
+	width:220px;
+	padding:6px 10px 0px 10px;
+	margin-bottom:-40px;
+	background:#ccc; 
+	color:#1f1f2f;
+	position: relative;
+}	
+
+.callout {	
+	width:220px;
+	float:left;
+	margin-right:18px;
+}
+
+.callout .pagelet {
+	margin: 10px 0px;
+	padding: 2px 10px;
+	color:#fff;
+	background:#1f1f2f;
+}
+
+.callout .pagelet a {
+	color:#fff;
+}
+
+.callout .pagelet a:hover {
+	color:#1f1f2f;
+	background:#eee;
+}
+
+.callout .pagelet.bordered {
+	background:#ccc;
+	color:#1f1f2f;
+	border:1px solid #1f1f2f;
+}
+
+.callout .pagelet.bordered a {
+	color:#1f1f2f;
+}
+
+.pagelet {
+	padding-bottom:6px!important;
+	padding-top:4px;
+}
+
+.pagelet h4 {
+	margin:6px 0px;
+	font-size:120%;
+}
+
+
+
+/* lists */
+
+ul, ol, dd {
+	padding-left:2em;
+}
+
+
+/* photo album */
+
+.photogrid-index {
+    text-align: center;
+    margin: auto;
+    overflow: auto;
+}
+
+/* IE Hack - be more explicit about width */
+/* Hides from IE5-mac \*/
+* html body.allow-sidebar .photogrid-index {
+	width:490px;
+}
+/* End hide from IE5-mac */
+
+.photogrid-index a {
+	text-decoration:none;
+	background-color:#fff;
+	color:#1f1f2f;
+}
+.photogrid-index h3 a:hover {
+	text-decoration:underline;
+}
+
+.gridItem {
+    float: left;
+    position:relative;
+    width:150px;
+    height:180px;	/* room for caption */
+	margin:5px;
+    padding-top: 10px;
+    background-color: #fff;
+    color:inherit;
+    overflow: hidden;
+}
+
+body.no-sidebar .gridItem {
+	width:136px;
+}
+
+.gridItem h3 {
+    font-weight: normal;
+    font-size:100%;
+	background-color:#fff;
+    color: #1f1f2f;
+    margin: 4px 7px 0px 7px;
+	padding: 0px 2px;
+    position:absolute;
+	top: 140px; /* needs to leave 38px from the bottom of the gridItem */
+	width: 136px;
+}
+
+.gridItem img {
+    border: 1px solid #000;
+    margin: auto;
+    display:block;
+    position: absolute;
+    top: 0;
+    bottom: 40px;
+    right: 0;
+    left: 0;
+}
+
+* html .gridItem img {
+	position:relative;
+}
+
+
+body.no-sidebar .gridItem h3 {
+	margin: 4px 2px 0px 4px;
+	padding: 0px;
+	width: 128px;
+}
+
+
+/* photo navigation */
+
+.photo-navigation {
+	position:relative;
+    height: 21px;
+    width:200px;
+    margin:0px auto 8px auto;
+}
+
+.photo-navigation div {
+	width:34px;
+	height:21px;
+	position: absolute;
+    text-indent: -5000em;
+}
+
+.photo-navigation a {
+	border-bottom:none;
+	display:block;
+	width:100%;
+	height:100%;
+}
+
+#previous-photo	{
+    background: url(photo-prev-off.gif)		no-repeat;
+    left: 42px;
+}
+#previous-photo a {
+    background: url(photo-prev.gif)		no-repeat;
+}
+
+#next-photo {
+    background: url(photo-next-off.gif)		no-repeat;
+    left: 124px; 
+}
+#next-photo a {
+    background: url(photo-next.gif)		no-repeat;
+}
+
+#photo-list {
+    background: url(photo-list-off.gif)		no-repeat;
+    left: 83px;
+}
+#photo-list a {
+    background: url(photo-list.gif)		no-repeat;
+}
+
+.image-controls a {
+	border-bottom:none !important;
+}
+
+/* IE Hack */
+/* Hides from IE5-mac \*/
+* html .gridItem img {
+	position: relative;
+	top:0px;
+}
+
+* html .gridItem h3 {
+	position: relative;
+	top: 0px;
+}
+/* End hide from IE5-mac */
+
+
+/* fix positioning for IE5/Win*/
+@media tty {
+i{content:"\";/*" "*/}} @import 'ie.css'; /*";}
+}/* */
+
+
+
+/* 
+SANDVOX INTERNALS
+*/
+
+.clear {clear: both; height: 0;}
+#main .clear {clear:left;} /* CHANGE from standard! */
+/* IE Hack */
+/* Hides from IE5-mac \*/
+* html .clear{ display:inline;}
+/* End hide from IE5-mac */
+.hidden {display:none;}
+img.narrow {float: right;  margin: 0em 0em 0.8em 0.8em;}
+img.wide {display: block;}
+.ImageElement, .VideoElement { text-align:center;}
+
+

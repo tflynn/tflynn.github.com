@@ -1,0 +1,8 @@
+#page {
+	width:756px;
+	overflow:hidden;
+}
+
+#page-content { margin-top: -15px;}
+
+#page, #page-content, #sidebar { position:relative;}
